@@ -1,2 +1,2 @@
-# K23CNT2_NguyenManhTuan_NetCore 
+# K23CNT2_NguyenManhTuan_NetCore
 K23CNT2_NguyenManhTuan_NetCore
