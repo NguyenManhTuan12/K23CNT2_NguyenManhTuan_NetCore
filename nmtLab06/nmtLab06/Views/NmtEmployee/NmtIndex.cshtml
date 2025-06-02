@@ -1,0 +1,54 @@
+﻿@model IEnumerable<nmtLab06.Models.NmtEmployee>
+
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Danh sách nhân viên</h2>
+        <a href="/NmtEmployee/NmtCreate" class="btn btn-primary">Thêm mới</a>
+    </div>
+
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tên</th>
+                <th>Ngày sinh</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+                <th>Lương</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var nmtEmp in Model)
+            {
+                <tr>
+                    <td class="text-center">@nmtEmp.NmtId</td>
+                    <td>@nmtEmp.NmtName</td>
+                    <td>@nmtEmp.NmtBirthDay.ToString("dd/MM/yyyy")</td>
+                    <td>@nmtEmp.NmtEmail</td>
+                    <td>@nmtEmp.NmtPhone</td>
+                    <td class="text-end">@nmtEmp.NmtSalary.ToString("N0")</td>
+                    <td class="text-center">
+                        @if (nmtEmp.NmtStatus)
+                        {
+                            <span class="badge bg-success">Đang làm</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Nghỉ việc</span>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="NmtEdit" asp-route-id="@nmtEmp.NmtId">Sửa</a> |
+                        <a class="btn btn-danger" asp-action="NmtDelete" asp-route-id="@nmtEmp.NmtId">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

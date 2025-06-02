@@ -1,0 +1,60 @@
+﻿@model nmtLab06.Models.NmtEmployee
+
+@{
+    ViewData["Title"] = "Thêm mới nhân viên";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Thêm mới nhân viên</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="NmtCreateSubmit" method="post">
+                <div class="mb-3">
+                    <label asp-for="NmtName" class="form-label">Họ tên</label>
+                    <input asp-for="NmtName" class="form-control" />
+                    <span asp-validation-for="NmtName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NmtBirthDay" class="form-label">Ngày sinh</label>
+                    <input asp-for="NmtBirthDay" type="date" class="form-control" />
+                    <span asp-validation-for="NmtBirthDay" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NmtEmail" class="form-label">Email</label>
+                    <input asp-for="NmtEmail" class="form-control" />
+                    <span asp-validation-for="NmtEmail" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NmtPhone" class="form-label">Điện thoại</label>
+                    <input asp-for="NmtPhone" class="form-control" />
+                    <span asp-validation-for="NmtPhone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NmtSalary" class="form-label">Lương</label>
+                    <input asp-for="NmtSalary" class="form-control" />
+                    <span asp-validation-for="NmtSalary" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input asp-for="NmtStatus" class="form-check-input" type="checkbox" />
+                    <label asp-for="NmtStatus" class="form-check-label">Đang làm việc</label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save"></i> Lưu
+                    </button>
+                    <a asp-action="NmtIndex" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left-circle"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
