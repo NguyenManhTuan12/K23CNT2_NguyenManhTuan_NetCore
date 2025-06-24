@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Member Info";
+    var nmtMember = ViewBag.nmtMember as NmtLesson05Model.Models.DataModels.NmtMember;
+}
+
+<div class="alert alert-danger">
+    <h1>Member Info</h1>
+    <hr />
+    <p>Member ID : @nmtMember.NmtMemberID</p>
+    <p>Username : @nmtMember.NmtUserName </p>
+    <p>FullName : @nmtMember.NmtFullName</p>
+    <p>Password : @nmtMember.NmtPassword</p>
+    <p>Email : @nmtMember.NmtEmail</p>
+</div>
